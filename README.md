@@ -1,58 +1,54 @@
-# Página de checkout
+# React + TypeScript + Vite
 
-Este projeto é uma interface de checkout que simula uma experiência de finalização de compra em um e-commerce. O objetivo é permitir ao usuário escolher entre diferentes métodos de pagamento — Cartão de Crédito, Boleto Bancário e Pix — e preencher os dados necessários para concluir a compra. O layout também apresenta um resumo do pedido com subtotal, desconto e total final, além de destacar os métodos de pagamento aceitos e o prazo de entrega.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🔨 Requisitos
+Currently, two official plugins are available:
 
-#### Requisito 1
-O usuário deve poder alternar entre os três métodos de pagamento: Cartão de Crédito, Boleto e Pix.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-#### Requisito 2
-O formulário de pagamento deve exibir os campos específicos de acordo com o método selecionado:
+## Expanding the ESLint configuration
 
-- Cartão de Crédito: número do cartão, nome, validade, CVV e parcelas.
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-- Boleto Bancário: CPF e nome completo.
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
-- Pix: exibição de QR Code e código copiável.
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-#### Requisito 3
-Deve ser exibido ao lado o resumo da compra, com:
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-- Nome do produto
-
-- Quantidade
-
-- Subtotal, desconto e valor total
-
-- Métodos de pagamento aceitos
-
-- Prazo estimado de entrega
-
-## 🔨 Desafio extra para quem quer ir além
-
-- Implementar validação dos dados dos formulários em tempo real.
-
-- Exibir mensagem de sucesso ou erro após clicar no botão "Finalizar pagamento".
-
-## 🎨 Design Sugerido
-
-Temos uma sugestão de design no Figma. Entretanto, fique à vontade para montar a aplicação conforme a sua criatividade.
-
-### Figma
-
-🔗 [Link do design](https://www.figma.com/community/file/1491765228337897918/mini-projeto-pagina-de-checkout)
-
-## 👉🏽 Sobre esse mini-projeto
-
-### O que você irá praticar:
-
-#### React
-- Manipulação de estado para alternar entre os métodos de pagamento.
-
-- Renderização condicional de formulários com base na opção selecionada.
-
-#### TailwindCSS
-- Construção de layouts responsivos com grid e flex.
-
-- Estilização consistente utilizando classes utilitárias para espaçamento, tipografia e cores.
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
+```
