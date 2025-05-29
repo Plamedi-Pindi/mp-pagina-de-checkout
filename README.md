@@ -1,5 +1,7 @@
 # Página de checkout
 
+[Visualizar o resultado do projeto](https://pagina-de-checkout.vercel.app/)
+
 Este projeto é uma interface de checkout que simula uma experiência de finalização de compra em um e-commerce. O objetivo é permitir ao usuário escolher entre diferentes métodos de pagamento — Cartão de Crédito, Boleto Bancário e Pix — e preencher os dados necessários para concluir a compra. O layout também apresenta um resumo do pedido com subtotal, desconto e total final, além de destacar os métodos de pagamento aceitos e o prazo de entrega.
 
 ## 🔨 Requisitos
