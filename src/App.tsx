@@ -83,11 +83,11 @@ function App() {
 
           <h3 className='font-bold text-base mt-4 mb-4 '> Métodos de pagamentos aceitos: </h3>
           <ul className='flex space-x-3'>
-            <li className='bg-zinc-100 p-1 text-[0.6rem] font-medium rounded'>visa</li>
-            <li className='bg-zinc-100 p-1 text-[0.6rem] font-medium rounded'>Mastercard</li>
-            <li className='bg-zinc-100 p-1 text-[0.6rem] font-medium rounded'>Elo</li>
-            <li className='bg-zinc-100 p-1 text-[0.6rem] font-medium rounded'>Boleto</li>
-            <li className='bg-zinc-100 p-1 text-[0.6rem] font-medium rounded'>Pix</li>
+            <li className='bg-zinc-100 p-1 text-[0.7rem] font-medium rounded'>visa</li>
+            <li className='bg-zinc-100 p-1 text-[0.7rem] font-medium rounded'>Mastercard</li>
+            <li className='bg-zinc-100 p-1 text-[0.7rem] font-medium rounded'>Elo</li>
+            <li className='bg-zinc-100 p-1 text-[0.7rem] font-medium rounded'>Boleto</li>
+            <li className='bg-zinc-100 p-1 text-[0.7rem] font-medium rounded'>Pix</li>
           </ul>
         </div>
         {/* Resumo End */}
